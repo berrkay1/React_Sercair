@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PopUp from './PopUp';
 import StoragePopUp from './StoragePopUp';
 
@@ -7,23 +7,21 @@ import StoragePopUp from './StoragePopUp';
 function CartItem({ item }) {
 
     const [modal, setModal] = useState(false);
-    
+    const [local,setLocal] = useState(false)
 
 
     const handlePopUp = () => {
          setModal(true)
-        localStorage.setItem('Detay', JSON.stringify(item));
-      };
+         localStorage.setItem('Detay', JSON.stringify(item));
+    };
 
-      window.onload = function() {
-          if(localStorage.length === 1 ){
-           console.log('merhaba');
-          }
-      };
 
-      
-      
 
+    useEffect(()=>{
+        setLocal(true)
+    },[])
+
+   
     return (
         <>
            
@@ -36,7 +34,7 @@ function CartItem({ item }) {
                 </div>
             </div>
             {modal && <PopUp setModal={setModal} item={item}/>}
-            {/* {localStorage.length === 1  &&  <StoragePopUp />} */}
+            {(localStorage.length === 1 && local) && <StoragePopUp setLocal={setLocal} />}
         </>
     )
 }

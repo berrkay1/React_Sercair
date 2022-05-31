@@ -16,7 +16,7 @@ body{
   flex-wrap: wrap;
 }
 .card{
-  margin-right: 20px;
+  margin: 20px;
   width:20rem;
   padding: 0 10px;
   

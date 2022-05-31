@@ -5,13 +5,11 @@ function PopUp({ item, setModal }) {
 
   const ref = useRef();
 
-  useClickOutside(ref, () => setModal(false));
-
-
+  useClickOutside(ref, ()=>setModal(false) );
 
   return (
     <div className='pop-up'>
-      <div ref={ref} className="card " style={{ width: '40rem' }}  >
+      <div ref={ref} className="card " style={{ width: '35rem' }}  >
         <img src={item.imageUrl} className="card-img-top" alt={item.deviceName} />
         <div className="card-body">
           <h4 className="card-title">Sercair</h4>

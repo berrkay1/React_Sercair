@@ -4,9 +4,9 @@ import axios from "axios";
 
 export const fetchGetApi = createAsyncThunk('cart/fetchGetApi' , async () => {
     const res = await axios('https://landingpage.sercair.com/api/V1/device/all')
-
     return res.data.data
 });
+
 
 
 const cartSlice = createSlice({
