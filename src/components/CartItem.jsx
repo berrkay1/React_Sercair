@@ -12,6 +12,7 @@ function CartItem({ item }) {
 
     const handlePopUp = () => {
          setModal(true)
+         setLocal(false)
          localStorage.setItem('Detay', JSON.stringify(item));
     };
 
